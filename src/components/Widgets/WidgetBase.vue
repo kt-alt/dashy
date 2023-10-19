@@ -78,6 +78,7 @@ const COMPAT = {
   'gl-network-traffic': 'GlNetworkTraffic',
   'gl-system-load': 'GlSystemLoad',
   'gl-cpu-temp': 'GlCpuTemp',
+  'gl-containers': 'GlContainers',
   'health-checks': 'HealthChecks',
   'hackernews-trending': 'HackernewsTrending',
   'gluetun-status': 'GluetunStatus',

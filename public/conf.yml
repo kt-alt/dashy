@@ -1,47 +1,199 @@
----
-# Page meta info, like heading, footer text and nav links
+appConfig:
+  cssThemes:
+    - Tama
+  theme: Tama
+  layout: auto
+  iconSize: medium
+  language: en
+  startingView: default
+  defaultOpeningMethod: newtab
+  statusCheck: false
+  statusCheckInterval: 0
+  faviconApi: allesedv
+  routingMode: history
+  enableMultiTasking: false
+  widgetsAlwaysUseProxy: false
+  webSearch:
+    disableWebSearch: false
+    searchEngine: duckduckgo
+    openingMethod: newtab
+    searchBangs: {}
+  enableFontAwesome: true
+  enableMaterialDesignIcons: false
+  hideComponents:
+    hideHeading: true
+    hideNav: true
+    hideSearch: false
+    hideSettings: false
+    hideFooter: true
+  auth:
+    enableGuestAccess: false
+    users:
+      - user: admin
+        hash: 9eca2859286e91f7f5984bea35f6cd7b058ed9e1485741c3ab2079cdd3609fa7
+        type: admin
+    enableKeycloak: false
+  showSplashScreen: false
+  preventWriteToDisk: false
+  preventLocalSave: false
+  disableConfiguration: false
+  allowConfigEdit: true
+  enableServiceWorker: false
+  disableContextMenu: false
+  disableUpdateChecks: false
+  disableSmartSort: false
+  enableErrorReporting: false
+  colCount: 3
+  backgroundImg: ''
 pageInfo:
   title: Dashy
   description: Welcome to your new dashboard!
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
-
-# Optional app settings and configuration
-appConfig:
-  theme: colorful
-
-# Main content - An array of sections, each containing an array of items
+    - title: GitHub
+      path: https://github.com/Lissy93/dashy
+    - title: Documentation
+      path: https://dashy.to/docs
+  footerText: ''
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+  - name: Server Info
+    displayData:
+      sortBy: default
+      rows: 3
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: gl-current-cpu
+        useProxy: true
+        ignoreErrors: true
+        options:
+          hostname: http://192.168.30.185:61208
+        id: 0_1059_glcurrentcpu
+      - type: gl-containers
+        useProxy: true
+        ignoreErrors: true
+        options:
+          hostname: http://192.168.30.185:61208
+        id: 1_1059_glcurrentcores
+  - name: My Stuff
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Gmail
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/gmail.png
+        url: https://mail.google.com
+        target: newtab
+        id: 0_750_gmail
+      - title: Outlook
+        icon: >-
+          https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/apps_microsoft_outlook.svg
+        url: https://outlook.live.com
+        target: newtab
+        id: 1_750_outlook
+      - title: Y! Mail
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/yahoo-mail.png
+        url: https://mail.yahoo.com
+        target: newtab
+        id: 2_750_ymail
+      - title: Y! Pools
+        icon: yahoo_fantasy.png
+        url: https://hockey.fantasysports.yahoo.com/
+        target: newtab
+        id: 3_750_ypools
+      - title: G Calendar
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/google-calendar.png
+        url: https://calendar.google.com
+        target: newtab
+        id: 4_750_gcalendar
+      - title: Proton
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proton-mail.png
+        url: https://mail.proton.me
+        target: newtab
+        id: 5_750_proton
+      - title: Reddit
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/reddit.png
+        url: https://www.reddit.com
+        target: newtab
+        id: 6_750_reddit
+      - title: Github
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/github-light.png
+        url: https://www.github.com
+        target: newtab
+        id: 7_750_github
+  - name: Self Hosted
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: HaOS
+        icon: >-
+          https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png
+        url: https://hass.home.arpa
+        target: newtab
+        id: 0_1041_hass
+      - title: WP
+        icon: >-
+          https://cdn.jsdelivr.net/gh/PapirusDevelopmentTeam/papirus_icons/src/apps_wordpress.svg
+        url: https://gathereddebris.home.arpa
+        target: newtab
+        id: 1_1041_gd
+      - title: Graylog
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/graylog.png
+        url: https://rogu.home.arpa
+        target: newtab
+        id: 2_1041_rogu
+      - title: Glances
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/glances.png
+        url: https://miru.home.arpa
+        target: newtab
+        id: 3_1041_miru
+      - title: Nas 1
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/synology-dsm.png
+        url: https://partha.home.arpa
+        target: newtab
+        id: 4_1041_partha
+      - title: Nas 2
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/synology-dsm.png
+        url: https://pluto.home.arpa
+        target: newtab
+        id: 5_1041_pluto
+  - name: Network
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 2
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: NG Switch
+        icon: ng_switch.png
+        url: https://habu
+        target: newtab
+        id: 0_746_habu
+      - title: Asus AP
+        icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/asus.png
+        url: https://porto.home.arpa
+        target: newtab
+        id: 1_746_porto
+      - title: Tomato AP
+        icon: ap_tomato.png
+        url: https://presto.home.arpa
+        target: newtab
+        id: 2_746_presto
+      - title: Pfsense
+        icon: >-
+          https://cdn.jsdelivr.net/gh/loganmarchione/homelab-svg-assets/assets/pfsense-blue.svg
+        url: https://banken.home.arpa
+        target: newtab
+        id: 3_746_banken
